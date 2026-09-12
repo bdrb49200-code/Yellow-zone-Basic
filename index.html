@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>كيان | لوحة الإدارة</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div><b>كيان</b><span>لوحة الإدارة</span></div><button id="refresh">تحديث البيانات</button></header>
+<main><section class="cards"><div><small>طلبات جديدة</small><b id="newCount">0</b></div><div><small>إجمالي الطلبات</small><b id="allCount">0</b></div><div><small>الألعاب النشطة</small><b id="productCount">0</b></div></section>
+<section class="panel"><h2>طلبات عروض الأسعار</h2><div class="table-wrap"><table><thead><tr><th>العميل</th><th>الجوال</th><th>المنشأة</th><th>الميزانية</th><th>الحالة</th><th>التاريخ</th><th>تواصل</th></tr></thead><tbody id="requests"></tbody></table></div></section>
+<section class="panel"><h2>الألعاب والأسعار التجريبية</h2><div id="products" class="products"></div></section></main>
+<script>
+const SUPABASE_URL="https://jtyivmllqivsnuimeujx.supabase.co", SUPABASE_KEY="sb_publishable_DBZeC4oATo87I3B4zuAvzQ_fS8rvHmm";
+async function api(path,options={}){const r=await fetch(SUPABASE_URL+"/rest/v1/"+path,{...options,headers:{apikey:SUPABASE_KEY,Authorization:"Bearer "+SUPABASE_KEY,"Content-Type":"application/json",...(options.headers||{})}});if(!r.ok)throw Error(await r.text());return r.status===204?null:r.json()}
+function sa(phone){let p=(phone||"").replace(/\D/g,"");if(p.startsWith("05"))p="966"+p.slice(1);return p}
+async function load(){
+ const [r,p]=await Promise.all([api("quote_requests?select=*&order=created_at.desc"),api("products?select=*&active=eq.true&order=created_at.desc")]);
+ document.querySelector("#newCount").textContent=r.filter(x=>x.status==="new").length;
+ document.querySelector("#allCount").textContent=r.length;document.querySelector("#productCount").textContent=p.length;
+ document.querySelector("#requests").innerHTML=r.map(x=>`<tr><td>${x.name}</td><td>${x.phone}</td><td>${x.company||"-"}</td><td>${x.budget||"-"}</td><td><select onchange="status('${x.id}',this.value)"><option ${x.status==="new"?"selected":""} value="new">جديد</option><option ${x.status==="contacted"?"selected":""} value="contacted">تم التواصل</option><option ${x.status==="quoted"?"selected":""} value="quoted">تم التسعير</option><option ${x.status==="closed"?"selected":""} value="closed">مغلق</option></select></td><td>${new Date(x.created_at).toLocaleDateString("ar-SA")}</td><td><a class="wa" target="_blank" href="https://wa.me/${sa(x.phone)}?text=${encodeURIComponent("السلام عليكم، معك فريق كيان بخصوص طلب عرض السعر.")}">واتساب</a></td></tr>`).join("") || "<tr><td colspan='7'>لا توجد طلبات حتى الآن</td></tr>";
+ document.querySelector("#products").innerHTML=p.map(x=>`<article><b>${x.name}</b><span>${x.category}</span><strong>${Number(x.price_from||0).toLocaleString("ar-SA")} ريال</strong></article>`).join("");
+}
+async function status(id,value){await api("quote_requests?id=eq."+id,{method:"PATCH",body:JSON.stringify({status:value})});load()}
+document.querySelector("#refresh").onclick=load;load().catch(e=>alert("تعذر تحميل البيانات. تحقق من صلاحيات Supabase."));
+</script></body></html>
