@@ -5,6 +5,7 @@ trap 'echo "توقف النشر عند السطر $LINENO. لم يتم تأكي�
 for tool in git gh python3; do command -v "$tool" >/dev/null; done
 test -f "$SM_ARCHIVE"
 repo=$(gh repo view --json nameWithOwner --jq .nameWithOwner)
+test "$repo" = "bdrb49200-code/Yellow-zone-Basic" || { echo "افتح مستودع Yellow-zone-Basic قبل تشغيل هذا الأمر." >&2; exit 1; }
 echo "المستودع المستهدف: $repo"
 stage=$(mktemp -d)
 export SM_STAGE="$stage"
@@ -48,4 +49,4 @@ fi
 echo "تم رفع الملفات وضبط Pages. اكتمال بناء الموقع يُراجع في Actions:"
 echo "https://github.com/$repo/actions"
 gh api "repos/$repo/pages" --jq .html_url
-echo "الموقعان ما زالا يحتاجان إعداد قاعدة البيانات لتفعيل الحسابات والطلبات والتحكم المشترك."
+echo "إعدادات قاعدة صناع البسمة موجودة. حسابات المديرين وGoogle تحتاج استكمال التفعيل."

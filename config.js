@@ -1,2 +1,1 @@
-// Use the SAME project URL and public publishable key in both sites. Never use a secret/service-role key.
-window.SM_CONFIG = { url: '', key: '' };
+window.SM_CONFIG={"url": "https://jtyivmllqivsnuimeujx.supabase.co", "key": "sb_publishable_DBZeC4oATo87I3B4zuAvzQ_fS8rvHmm", "googleEnabled": false};

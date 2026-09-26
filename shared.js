@@ -12,5 +12,6 @@ window.SM = (() => {
   const synonyms=[['زحليق','زحليقه','زحاليق','زحلاقه','slide','slides'],['سست','سوست','سسته','زنبرك','spring','springs'],['كور','كرات','كره','balls','ball'],['ترامبولين','ترمبولين','trampoline'],['اسفنج','فوم','foam'],['تسلق','climbing','climb']];
   const tokens = s => normalize(s).split(' ').filter(Boolean);
   function matches(p,q){const hay=normalize([p.name_ar,p.name_en,p.description_ar,p.description_en,p.aliases].join(' '));return tokens(q).every(t=>{const group=synonyms.find(g=>g.some(w=>normalize(w)===t));return (group||[t]).some(w=>hay.includes(normalize(w)));});}
-  return {db,esc,safeURL,read,write,list,save,normalize,matches};
+  const saPhone=x=>{let n=String(x||"").replace(/[٠-٩]/g,c=>"٠١٢٣٤٥٦٧٨٩".indexOf(c)).replace(/\D/g,"");if(n.startsWith("00"))n=n.slice(2);if(/^05\d{8}$/.test(n))n="966"+n.slice(1);if(/^5\d{8}$/.test(n))n="966"+n;return /^9665\d{8}$/.test(n)?n:"";};
+  return {saPhone,db,esc,safeURL,read,write,list,save,normalize,matches};
 })();

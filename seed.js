@@ -17,3 +17,7 @@ window.SM_SEED.sm_products.forEach((p,i)=>{if(catalogImages[i+1])p.image=catalog
 window.SM_SEED.sm_products[14].description_ar='تصور بصري مؤقت فقط، لا يمثل شكل الديسرينة الفعلي. يلزم اعتماد صورة المنتج.';
 window.SM_SEED.sm_products[14].description_en='Temporary visual concept only, not the actual Diserina design. Product photo pending.';
 window.SM_SEED.sm_pages.filter(p=>['about','services'].includes(p.slug)).forEach(p=>p.image='assets/catalog-services.webp');
+
+Object.assign(SM_SEED.sm_settings[0],{"whatsapp": "966550204344", "phone": "0550204344", "instagram": "https://www.instagram.com/fun_maker2010/", "facebook": "https://www.facebook.com/share/DZSw5G8VWhvhtRDK/", "tiktok": "https://www.tiktok.com/@sunaaelbsmaa", "youtube": "https://youtube.com/channel/UCOfW0DslCJxfGaC1FYW-zWA", "catalog": "https://www.behance.net/a1ff5a5a", "website": "https://www.seassaw.com/", "logo": "assets/logo.jpg"});
+SM_SEED.sm_centers.forEach(c=>Object.assign(c,{logo:"",gallery:[]}));
+SM_SEED.sm_products.forEach((p,i)=>{if([26, 17, 5, 22, 6, 13, 10, 12, 29, 28, 30, 31, 16].includes(i+1)){p.image=`assets/provided-${i+1}.jpg`;p.description_ar="الصورة المقدمة للمنتج؛ المقاسات حسب بيانات الصنف.";p.description_en="Supplied product image. Dimensions follow the item specifications."}});
