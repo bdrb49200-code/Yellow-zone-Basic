@@ -1,0 +1,3 @@
+-- Backup reference only. The live Supabase schema was prepared from ChatGPT.
+-- Final catalog adds grouping, discounts, price visibility, product galleries,
+-- and VAT-aware order totals while keeping old checkout requests compatible.

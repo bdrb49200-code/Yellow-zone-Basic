@@ -1,0 +1,133 @@
+{
+  "method": "Built-in image generation",
+  "images": [
+    {
+      "id": 1,
+      "prompt": "Purple and yellow padded donut swing disc, white studio background."
+    },
+    {
+      "id": 2,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one large galvanized trampoline extension coil spring with hook at each end. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 3,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one shorter compact galvanized trampoline extension coil spring with hook at each end. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 4,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a commercial indoor climbing auto-belay winch device with retracting webbing and locking carabiner, generic design without brand. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 6,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a small pile of colorful plastic ball-pit balls purple yellow blue and pink. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 7,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one yellow open-cell foam pit cube. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 8,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one pink open-cell foam pit cube. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 9,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one sky-blue open-cell foam pit cube. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 10,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a children's four-wheel pedal go-kart for a play traffic track. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 11,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a child-sized pretend-play petrol pump station in purple and yellow, no writing. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 12,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a child-sized pretend-play cash machine with blank screen and pretend card slot, purple yellow. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials, clear detail, no people, no text, no logos, no watermarks. Illustrative product concept, not a certified design."
+    },
+    {
+      "id": 13,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a child-height freestanding toy traffic light with red amber and green lenses on a stable weighted base. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 14,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a honey-tree themed indoor soft-play attraction, padded tree trunk, cheerful green canopy, honeycomb details and hanging padded yellow honey pots. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 15,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of an abstract purple and gold soft-play equipment concept made from rounded padded geometric forms; deliberately generic concept illustration for an unidentified play product. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 16,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of two rolled safety nets, one white and one black, thick woven cord and square mesh. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 17,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one blue textured resin climbing hold with central bolt hole. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 18,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a short child-size indoor climbing panel with purple surface and colorful holds and padded base. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 19,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a cylindrical protective foam sleeve for a play structure pole, yellow exterior and hollow center. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 20,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a folded and partially rolled black woven trampoline jumping fabric sheet, close-up visible mesh. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 21,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of an unbranded white sack with a small pile of clean pale granular play sand beside it. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 24,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one yellow plastic enclosed tube slide elbow section with round connection flanges. Entire object centered, generous whitespace, pure white seamless studio background, subtle grounding shadow, realistic materials. No people, no text, no logos, no watermark. Illustrative concept only."
+    },
+    {
+      "id": 22,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a triple lane indoor playground slide with three parallel short chutes and subtle illuminated edges, purple yellow blue. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 23,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a long triple lane indoor playground slide with three parallel broad chutes, yellow blue red. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 26,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one hanging padded cylindrical soft-play punching obstacle purple and yellow vinyl, no person. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 27,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a padded indoor playground swinging gate between two short padded posts, purple and yellow. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 28,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a three-step foam staircase with wide yellow treads and purple sides. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 29,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of four interlocking protective EVA foam floor tiles purple yellow blue pink arranged as a square, visible puzzle edges. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 30,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a single freestanding rectangular sand play boundary barrier panel with thick padded yellow frame and transparent center. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 31,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a low square padded sandbox entry step purple and yellow, one small step. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 33,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of one generic climbing safety harness, waist belt and leg loops, black blue webbing, no person, no certification labels. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": 34,
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a large plain white sack with pale fine play sand poured into a small pile beside it, no labels. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    },
+    {
+      "id": "services",
+      "prompt": "Use case: product-mockup. Square ecommerce catalog photograph of a beautifully organized indoor children's soft play space with purple yellow slides ball pit and padded climbing structure, no people, wide composition. Entire object centered, generous whitespace, pure white seamless studio background except for indoor space scene, subtle grounding shadow, realistic materials. No text, logos, watermark or people. Illustrative concept only."
+    }
+  ]
+}
