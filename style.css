@@ -44,3 +44,13 @@ details.orderCard{padding:0;overflow:hidden;display:block}details.orderCard>summ
 #fields>input[type=hidden]{display:none}
 #editor #save{position:sticky;bottom:0;box-shadow:0 -8px 20px #fff;background:var(--p);z-index:2}
 @media(max-width:600px){.advancedGrid{grid-template-columns:1fr;padding:14px}.productCategories{display:flex;overflow-x:auto;flex-wrap:nowrap}.productCategories button{white-space:nowrap;flex:0 0 auto}#tabs{overflow-x:auto;flex-wrap:nowrap}#tabs button{white-space:nowrap;flex:0 0 auto}}
+/* Unified products navigation */
+.productCategories{display:grid;gap:12px;padding:14px 16px}
+.categoryLevel{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.mainCategoryLevel{padding-bottom:12px;border-bottom:1px solid #e2dce5}
+.productCategories button{display:inline-flex;align-items:center;gap:8px}
+.productCategories button small{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:rgba(0,0,0,.06);font-size:12px}
+.productCategories .mainCategoryBtn{font-weight:800;border:1px solid #d6cbd9;background:#fff}
+.productCategories .mainCategoryBtn.active{background:#7a267f;color:#fff;border-color:#7a267f}
+.productCategories .addGroupBtn{border:1px dashed #7a267f;background:#fff;color:#7a267f;font-weight:800}
+@media(max-width:700px){.categoryLevel{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.categoryLevel button{flex:0 0 auto}.productCategories{padding:12px 8px}}
