@@ -23,3 +23,24 @@ details.orderCard{padding:0;overflow:hidden;display:block}details.orderCard>summ
 /* Final product & order refinements */
 .requestPriceAdmin{color:#742578;font-weight:800}.oldOrderPrice{text-decoration:line-through;color:#8b838f!important}.orderTotalsAdmin{display:grid;gap:6px;min-width:280px}.orderTotalsAdmin>div{display:flex;justify-content:space-between;gap:18px;color:#655b6a}.orderTotalsAdmin .grand{padding-top:8px;margin-top:4px;border-top:1px solid #dfd7e2}.orderTotalsAdmin .grand strong{color:var(--p);font-size:20px}.orderTotalsAdmin span{font-size:13px}.orderTotalsAdmin b{font-size:14px}
 @media(max-width:650px){.orderTotalsAdmin{width:100%;min-width:0}}
+
+
+/* 2026-10 simplified admin product workflow */
+#tabs{padding-bottom:4px;border-bottom:1px solid var(--line)}
+#tabs button{font-weight:700}
+#tabs button.active{box-shadow:0 5px 14px #74257822}
+.productCategories{padding:12px;background:#eeeaf1;border-radius:12px}
+.productCategories button{font-size:14px}
+.quickUpload{background:#fbf7fc;border:1px dashed #c9a9ce;border-radius:12px;padding:14px}
+.quickUpload input{background:#fff}
+.advancedFields{border:1px solid var(--line);border-radius:12px;background:#faf9fb;overflow:hidden;margin:4px 0 18px}
+.advancedFields>summary{cursor:pointer;padding:14px 16px;font-weight:800;color:var(--p);list-style:none}
+.advancedFields>summary::-webkit-details-marker{display:none}
+.advancedFields>summary:after{content:' +';float:left;font-size:20px;line-height:1}
+.advancedFields[open]>summary:after{content:' −'}
+.advancedFields[open]>summary{border-bottom:1px solid var(--line);background:#f5eff7}
+.advancedGrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;padding:18px}
+.advancedGrid .wide{grid-column:1/-1}
+#fields>input[type=hidden]{display:none}
+#editor #save{position:sticky;bottom:0;box-shadow:0 -8px 20px #fff;background:var(--p);z-index:2}
+@media(max-width:600px){.advancedGrid{grid-template-columns:1fr;padding:14px}.productCategories{display:flex;overflow-x:auto;flex-wrap:nowrap}.productCategories button{white-space:nowrap;flex:0 0 auto}#tabs{overflow-x:auto;flex-wrap:nowrap}#tabs button{white-space:nowrap;flex:0 0 auto}}

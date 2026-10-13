@@ -7,12 +7,30 @@ const specs={
  sm_settings:{title:'إعدادات الموقع',fields:[['brand_ar','اسم المؤسسة'],['whatsapp','واتساب بصيغة دولية بدون +'],['instagram','رابط إنستغرام','url'],['phone','رقم الاتصال'],['logo','رابط شعار الموقع'],['facebook','فيسبوك','url'],['tiktok','تيك توك','url'],['youtube','يوتيوب','url'],['catalog','رابط الكتالوج','url'],['payment_ar','تعليمات الدفع','textarea'],['shipping_ar','تفاصيل الشحن','textarea']]},
  sm_orders:{title:'الطلبات',fields:[['status','حالة الطلب','select','pending:جديد|reviewing:قيد المراجعة|quoted:تم إرسال السعر|completed:مكتمل|cancelled:ملغي']]}
 }
-let table='sm_products',rows=[],editing=null,demo=false,busy=false,productCategory='all';const demoData=structuredClone(SM_SEED);demoData.sm_orders=[];
+let table='sm_products',rows=[],editing=null,demo=false,busy=false,productCategory='games',productGroup='all';const demoData=structuredClone(SM_SEED);demoData.sm_orders=[];
 function notify(t){$('#message').textContent=t;$('#message').style.display='block';setTimeout(()=>$('#message').style.display='none',5000)}
-function start(){ $('#login').hidden=true;$('#workspace').hidden=false;$('#logout').hidden=false;$('#mode').textContent='متصل بقاعدة البيانات — التعديلات المنشورة تظهر للعملاء عند تحديث الصفحة.';$('#tabs').innerHTML=Object.entries(specs).map(([k,v])=>`<button data-table="${k}">${v.title}</button>`).join('');load();}
-async function load(){try{rows=demo?demoData[table]:await list(table);$('#heading').textContent=specs[table].title;$('#new').hidden=table==='sm_orders'||(table==='sm_settings'&&rows.length>0);document.querySelectorAll('[data-table]').forEach(b=>b.classList.toggle('active',b.dataset.table===table));render()}catch(e){notify('تعذر التحميل: '+e.message)}}
+function start(){ $('#login').hidden=true;$('#workspace').hidden=false;$('#logout').hidden=false;$('#mode').textContent='متصل بقاعدة البيانات — التعديلات المنشورة تظهر للعملاء عند تحديث الصفحة.';$('#tabs').innerHTML=adminTabs.map(t=>`<button data-table="${t.table}" ${t.category?`data-product-category="${t.category}"`:''}>${t.label}</button>`).join('');load();}
+async function load(){try{rows=demo?demoData[table]:await list(table);const sectionTitle=table==='sm_products'?(productCategoryLabels[productCategory]||'المنتجات'):specs[table].title;$('#heading').textContent=sectionTitle;$('#new').hidden=table==='sm_orders'||(table==='sm_settings'&&rows.length>0);$('#new').textContent=table==='sm_products'?`+ إضافة ${productCategory==='games'?'لعبة':productCategory==='parts'?'قطعة غيار':'منتج سلامة'}`:'إضافة';document.querySelectorAll('#tabs [data-table]').forEach(b=>{const sameTable=b.dataset.table===table;const sameCat=table!=='sm_products'||b.dataset.productCategory===productCategory;b.classList.toggle('active',sameTable&&sameCat)});render()}catch(e){notify('تعذر التحميل: '+e.message)}}
 const orderStatusLabels={pending:'جديد',reviewing:'قيد المراجعة',quoted:'تم إرسال السعر',completed:'مكتمل',cancelled:'ملغي'};
 const productGroupLabels={slides:'الزحاليق',climbing:'التسلق',interactive:'الألعاب التفاعلية',rides:'الألعاب الدوارة',roadplay:'ألعاب الطرق والتمثيل',softplay:'السوفت بلاي',challenge:'ألعاب التحدي',trampoline:'الترامبولين',sand:'الرمل وملحقاته',flooring:'الأرضيات والحماية',foam:'الفوم والحماية',installation:'لوازم التركيب',safety:'الحواجز والسلامة',inflatable:'الألعاب الهوائية',other:'منتجات أخرى'};
+const adminTabs=[
+ {table:'sm_products',category:'games',label:'الألعاب'},
+ {table:'sm_products',category:'parts',label:'قطع الغيار'},
+ {table:'sm_products',category:'safety',label:'السلامة والحماية'},
+ {table:'sm_centers',label:'المراكز وأعمالنا'},
+ {table:'sm_pages',label:'الصفحات والبنرات'},
+ {table:'sm_settings',label:'إعدادات الموقع'},
+ {table:'sm_orders',label:'الطلبات'}
+];
+const productCategoryLabels={games:'الألعاب',parts:'قطع الغيار',safety:'السلامة والحماية'};
+const quickProductFields=['name_ar','group_key','price','price_visible','description_ar','published'];
+const advancedProductFields=['discount_percent','unit_ar','image','gallery','options_ar','aliases','featured'];
+const productGroupsByCategory={
+ games:['slides','climbing','interactive','rides','roadplay','softplay','challenge','trampoline','inflatable','other'],
+ parts:['installation','slides','climbing','trampoline','sand','other'],
+ safety:['flooring','foam','safety','other']
+};
+const defaultProductGroup={games:'rides',parts:'installation',safety:'safety'};
 
 const translationFields={
  sm_products:[['name_ar','name_en'],['unit_ar','unit_en'],['description_ar','description_en'],['options_ar','options_en']],
@@ -54,25 +72,61 @@ function orderCard(r){
 function render(){
  const q=$('#search').value.trim();
  const categoryBar=$('#productCategories');
- if(table==='sm_products'){
-  categoryBar.hidden=false;
-  const counts={all:rows.length,games:0,parts:0,safety:0};
-  rows.forEach(r=>{if(counts[r.category]!==undefined)counts[r.category]++});
-  categoryBar.innerHTML=[['all','الكل'],['games','الألعاب'],['parts','قطع الغيار'],['safety','السلامة والحماية']].map(([key,label])=>`<button data-product-category="${key}" class="${productCategory===key?'active':''}">${label}<small>${counts[key]||0}</small></button>`).join('');
- }else categoryBar.hidden=true;
  let shown=rows.filter(r=>JSON.stringify(r).toLowerCase().includes(q.toLowerCase()));
- if(table==='sm_products'&&productCategory!=='all')shown=shown.filter(r=>r.category===productCategory);
- $('#stats').innerHTML=`<span>السجلات: ${shown.length}${shown.length!==rows.length?` من ${rows.length}`:''}</span><span>القسم: ${specs[table].title}</span>`;
+ if(table==='sm_products'){
+  shown=shown.filter(r=>r.category===productCategory);
+  if(productGroup!=='all')shown=shown.filter(r=>(r.group_key||'other')===productGroup);
+  categoryBar.hidden=false;
+  const sectionRows=rows.filter(r=>r.category===productCategory);
+  const counts={all:sectionRows.length};sectionRows.forEach(r=>{const g=r.group_key||'other';counts[g]=(counts[g]||0)+1});
+  const presentGroups=Object.keys(productGroupLabels).filter(g=>counts[g]);
+  categoryBar.innerHTML=[['all','الكل'],...presentGroups.map(g=>[g,productGroupLabels[g]])].map(([key,label])=>`<button data-product-group="${key}" class="${productGroup===key?'active':''}">${label}<small>${counts[key]||0}</small></button>`).join('');
+ }else categoryBar.hidden=true;
+ $('#stats').innerHTML=`<span>السجلات: ${shown.length}${table==='sm_products'?` في ${productCategoryLabels[productCategory]}`:shown.length!==rows.length?` من ${rows.length}`:''}</span><span>القسم: ${table==='sm_products'?(productGroup==='all'?'الكل':productGroupLabels[productGroup]||'أخرى'):specs[table].title}</span>`;
  if(table==='sm_orders'){
   $('#records').innerHTML=shown.length?shown.map(orderCard).join(''):'<article>لا توجد طلبات مطابقة.</article>';
   return;
  }
  const catLabel={games:'ألعاب',parts:'قطع الغيار',safety:'السلامة والحماية'};
- $('#records').innerHTML=shown.length?shown.map(r=>`<article>${r.image?`<img src="${esc(safeURL(r.image))}" alt="">`:''}<div class="body"><h3>${esc(r.name_ar||r.title_ar||r.brand_ar||r.company||r.id)}</h3><p>${esc(r.city_ar||(table==='sm_products'?`${catLabel[r.category]||r.category} · ${productGroupLabels[r.group_key]||'منتجات أخرى'}`:r.slug||r.status||''))}</p>${table==='sm_products'?(r.price_visible===false?'<p class="requestPriceAdmin">السعر عند الطلب</p>':`<p>${esc(r.price)} ر.س / ${esc(r.unit_ar)}${Number(r.discount_percent)>0?` · خصم ${esc(r.discount_percent)}%`:''}</p>`):(r.price!=null?`<p>${esc(r.price)} ر.س / ${esc(r.unit_ar)}</p>`:'')}${r.published===false?'<small>مخفي عن العملاء</small>':''}</div><div class="actions"><button data-edit="${esc(r.id)}">تعديل</button>${['sm_products','sm_centers','sm_pages'].includes(table)?`<button class="danger" data-delete="${esc(r.id)}">حذف</button>`:''}</div></article>`).join(''):'<article>لا توجد سجلات مطابقة.</article>';
+ $('#records').innerHTML=shown.length?shown.map(r=>`<article>${r.image?`<img src="${esc(safeURL(r.image))}" alt="">`:''}<div class="body"><h3>${esc(r.name_ar||r.title_ar||r.brand_ar||r.company||r.id)}</h3><p>${esc(r.city_ar||(table==='sm_products'?`${productGroupLabels[r.group_key]||'منتجات أخرى'}`:r.slug||r.status||''))}</p>${table==='sm_products'?(r.price_visible===false?'<p class="requestPriceAdmin">السعر عند الطلب</p>':`<p>${esc(r.price)} ر.س / ${esc(r.unit_ar||'حبة')}${Number(r.discount_percent)>0?` · خصم ${esc(r.discount_percent)}%`:''}</p>`):(r.price!=null?`<p>${esc(r.price)} ر.س / ${esc(r.unit_ar)}</p>`:'')}${r.published===false?'<small>مخفي عن العملاء</small>':''}</div><div class="actions"><button data-edit="${esc(r.id)}">تعديل</button>${['sm_products','sm_centers','sm_pages'].includes(table)?`<button class="danger" data-delete="${esc(r.id)}">حذف</button>`:''}</div></article>`).join(''):'<article>لا توجد سجلات مطابقة.</article>';
 }
-function edit(id){editing=rows.find(r=>String(r.id)===id)||{};$('#formError').textContent='';$('#fields').innerHTML=`<div class="autoTranslateNote">اكتب بالعربي فقط — الترجمة الإنجليزية تُنشأ تلقائيًا عند الحفظ وتظهر للعميل عند اختيار English.</div>`+specs[table].fields.map(([key,label,type='text',options])=>{const val=(key==='gallery'?(editing.gallery||[]).join('\n'):editing[key])??(type==='checkbox'?true:'');let control;if(type==='textarea')control=`<textarea name="${key}" rows="4">${esc(val)}</textarea>`;else if(type==='select')control=`<select name="${key}">${selectOptions(options,val)}</select>`;else control=`<input name="${key}" type="${type}" ${type==='checkbox'?(val?'checked':''):`value="${esc(val)}"`} ${type==='number'?'min="0" step="0.01"':''} ${['name_ar','title_ar','brand_ar','price'].includes(key)?'required':''}>`;return `<label class="${type==='textarea'?'wide':''}">${label}${control}</label>`}).join('');if(['sm_products','sm_centers','sm_pages'].includes(table))$('#fields').insertAdjacentHTML('beforeend','<label class="wide">رفع صورة (PNG / JPEG / WebP، حتى 5 ميجابايت)<input type="file" id="upload" accept="image/png,image/jpeg,image/webp"><small>أو استخدم رابط صورة موجودة بالأعلى.</small></label>');if(table==='sm_products')$('#fields').insertAdjacentHTML('beforeend','<label class="wide">رفع صور إضافية للمنتج<input id="productGalleryUpload" type="file" multiple accept="image/png,image/jpeg,image/webp"></label>');if(table==='sm_centers')$('#fields').insertAdjacentHTML('beforeend','<label class="wide">رفع صور المعرض (تضاف بعد الصور الحالية)<input id="galleryUpload" type="file" multiple accept="image/png,image/jpeg,image/webp"></label><label>رفع شعار المركز<input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>');if(table==='sm_settings')$('#fields').insertAdjacentHTML('beforeend','<label>رفع شعار الموقع<input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>');$('#editor').showModal();}
-$('#editForm').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;translationWarning=false;const saveButton=$('#save'),oldSaveText=saveButton.textContent;saveButton.disabled=true;saveButton.textContent=table==='sm_orders'?'جاري الحفظ...':'جاري الترجمة والحفظ...';try{const row={...editing};for(const[k,,type]of specs[table].fields){const el=e.target.elements[k];row[k]=type==='checkbox'?el.checked:type==='number'?Number(el.value):el.value.trim();}if(['sm_centers','sm_products'].includes(table)){row.gallery=String(row.gallery||'').split('\n').map(x=>x.trim()).filter(Boolean);if(row.gallery.some(x=>!safeURL(x)))throw Error('رابط صورة غير صالح');}if(!row.id)row.id=table==='sm_settings'?'global':crypto.randomUUID();if(table==='sm_pages'&&!row.slug)row.slug='page-'+Date.now();if(table!=='sm_orders')await translateRow(table,row);const file=$('#upload')?.files[0];if(file){if(file.size>5*1024*1024||!['image/png','image/jpeg','image/webp'].includes(file.type))throw Error('صيغة الصورة أو حجمها غير مناسب');if(demo)throw Error('رفع الصور يحتاج ربط قاعدة البيانات. يمكنك تجربة رابط صورة في المعاينة.');else{const ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[file.type],path=`${crypto.randomUUID()}.${ext}`;const {error}=await db.storage.from('sm-media').upload(path,file,{contentType:file.type});if(error)throw error;row.image=db.storage.from('sm-media').getPublicUrl(path).data.publicUrl;}}if(table==='sm_products')for(const file of Array.from($('#productGalleryUpload')?.files||[]))row.gallery.push(await uploadImage(file));if($('#logoUpload')?.files[0])row.logo=await uploadImage($('#logoUpload').files[0]);if(table==='sm_centers')for(const file of Array.from($('#galleryUpload')?.files||[]))row.gallery.push(await uploadImage(file));if(demo){const i=demoData[table].findIndex(r=>r.id===row.id);if(i<0)demoData[table].push(row);else demoData[table][i]=row;}else if(table==='sm_orders'){const{error}=await db.from(table).update({status:row.status}).eq('id',row.id);if(error)throw error;}else await save(table,row);$('#editor').close();await load();notify(demo?'تم تعديل المعاينة المحلية':translationWarning?'تم الحفظ. تعذر تحديث الإنجليزية مؤقتًا وسيُعاد المحاولة عند التعديل القادم.':'تم الحفظ والترجمة تلقائيًا')}catch(err){$('#formError').textContent=err.message}finally{busy=false;saveButton.disabled=false;saveButton.textContent=oldSaveText}};
-$('#tabs').onclick=e=>{if(e.target.dataset.table){table=e.target.dataset.table;if(table==='sm_products')productCategory='all';$('#search').value='';load()}};$('#productCategories').onclick=e=>{const b=e.target.closest('[data-product-category]');if(!b)return;productCategory=b.dataset.productCategory;render()};$('#new').onclick=()=>edit('');$('#close').onclick=()=>$('#editor').close();$('#refresh').onclick=load;$('#search').oninput=render;
+function fieldHTML(def,editingRow){
+ const [key,label,type='text',options]=def;
+ let raw=editingRow[key];
+ if(key==='gallery')raw=(editingRow.gallery||[]).join('\n');
+ if(raw===undefined||raw===null||raw===''){
+  if(type==='checkbox')raw=['price_visible','published'].includes(key);
+  else if(key==='unit_ar')raw='حبة';
+  else if(key==='group_key')raw='other';
+  else raw='';
+ }
+ let control;
+ if(type==='textarea')control=`<textarea name="${key}" rows="4">${esc(raw)}</textarea>`;
+ else if(type==='select'){const selectRaw=key==='group_key'?(productGroupsByCategory[productCategory]||['other']).map(g=>`${g}:${productGroupLabels[g]}`).join('|'):options;control=`<select name="${key}">${selectOptions(selectRaw,raw)}</select>`;}
+ else control=`<input name="${key}" type="${type}" ${type==='checkbox'?(raw?'checked':''):`value="${esc(raw)}"`} ${type==='number'?'min="0" step="0.01"':''} ${['name_ar','title_ar','brand_ar'].includes(key)?'required':''}>`;
+ return `<label class="${type==='textarea'?'wide':''}">${label}${control}</label>`;
+}
+function edit(id){
+ editing=rows.find(r=>String(r.id)===id)||{};
+ if(table==='sm_products'&&!editing.id){editing.category=productCategory;editing.unit_ar='حبة';editing.price_visible=true;editing.published=true;editing.group_key=productGroup!=='all'?productGroup:(defaultProductGroup[productCategory]||'other');editing.discount_percent=0;editing.gallery=[];editing.featured=false;}
+ $('#formError').textContent='';
+ $('#editTitle').textContent=table==='sm_products'?(editing.id?'تعديل المنتج':`إضافة ${productCategory==='games'?'لعبة':productCategory==='parts'?'قطعة غيار':'منتج سلامة'}`):'تعديل';
+ if(table==='sm_products'){
+  const defs=specs.sm_products.fields;
+  const map=Object.fromEntries(defs.map(d=>[d[0],d]));
+  const quick=quickProductFields.map(k=>fieldHTML(map[k],editing)).join('');
+  const advanced=advancedProductFields.map(k=>fieldHTML(map[k],editing)).join('');
+  $('#fields').innerHTML=`<div class="autoTranslateNote">الإضافة السريعة: اكتب الاسم، اختر القسم الفرعي، حط السعر والصورة، واحفظ. باقي الإعدادات اختيارية.</div><input type="hidden" name="category" value="${esc(productCategory)}">${quick}<label class="wide quickUpload">صورة المنتج<input type="file" id="upload" accept="image/png,image/jpeg,image/webp"><small>اختار الصورة من جهازك مباشرة.</small></label><details class="advancedFields wide"><summary>إعدادات إضافية (اختياري)</summary><div class="advancedGrid">${advanced}<label class="wide">رفع صور إضافية للمنتج<input id="productGalleryUpload" type="file" multiple accept="image/png,image/jpeg,image/webp"></label></div></details>`;
+ }else{
+  $('#fields').innerHTML=`<div class="autoTranslateNote">اكتب بالعربي فقط — الترجمة الإنجليزية تُنشأ تلقائيًا عند الحفظ وتظهر للعميل عند اختيار English.</div>`+specs[table].fields.map(def=>fieldHTML(def,editing)).join('');
+  if(['sm_centers','sm_pages'].includes(table))$('#fields').insertAdjacentHTML('beforeend','<label class="wide">رفع صورة (PNG / JPEG / WebP، حتى 5 ميجابايت)<input type="file" id="upload" accept="image/png,image/jpeg,image/webp"><small>أو استخدم رابط صورة موجودة بالأعلى.</small></label>');
+  if(table==='sm_centers')$('#fields').insertAdjacentHTML('beforeend','<label class="wide">رفع صور المعرض (تضاف بعد الصور الحالية)<input id="galleryUpload" type="file" multiple accept="image/png,image/jpeg,image/webp"></label><label>رفع شعار المركز<input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>');
+  if(table==='sm_settings')$('#fields').insertAdjacentHTML('beforeend','<label>رفع شعار الموقع<input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp"></label>');
+ }
+ $('#editor').showModal();
+}
+$('#editForm').onsubmit=async e=>{e.preventDefault();if(busy)return;busy=true;translationWarning=false;const saveButton=$('#save'),oldSaveText=saveButton.textContent;saveButton.disabled=true;saveButton.textContent=table==='sm_orders'?'جاري الحفظ...':'جاري الترجمة والحفظ...';try{const row={...editing};for(const[k,,type]of specs[table].fields){const el=e.target.elements[k];if(!el)continue;row[k]=type==='checkbox'?el.checked:type==='number'?Number(el.value):el.value.trim();}if(table==='sm_products')row.category=productCategory;if(['sm_centers','sm_products'].includes(table)){row.gallery=String(row.gallery||'').split('\n').map(x=>x.trim()).filter(Boolean);if(row.gallery.some(x=>!safeURL(x)))throw Error('رابط صورة غير صالح');}if(!row.id)row.id=table==='sm_settings'?'global':crypto.randomUUID();if(table==='sm_pages'&&!row.slug)row.slug='page-'+Date.now();if(table!=='sm_orders')await translateRow(table,row);const file=$('#upload')?.files[0];if(file){if(file.size>5*1024*1024||!['image/png','image/jpeg','image/webp'].includes(file.type))throw Error('صيغة الصورة أو حجمها غير مناسب');if(demo)throw Error('رفع الصور يحتاج ربط قاعدة البيانات. يمكنك تجربة رابط صورة في المعاينة.');else{const ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[file.type],path=`${crypto.randomUUID()}.${ext}`;const {error}=await db.storage.from('sm-media').upload(path,file,{contentType:file.type});if(error)throw error;row.image=db.storage.from('sm-media').getPublicUrl(path).data.publicUrl;}}if(table==='sm_products')for(const file of Array.from($('#productGalleryUpload')?.files||[]))row.gallery.push(await uploadImage(file));if($('#logoUpload')?.files[0])row.logo=await uploadImage($('#logoUpload').files[0]);if(table==='sm_centers')for(const file of Array.from($('#galleryUpload')?.files||[]))row.gallery.push(await uploadImage(file));if(demo){const i=demoData[table].findIndex(r=>r.id===row.id);if(i<0)demoData[table].push(row);else demoData[table][i]=row;}else if(table==='sm_orders'){const{error}=await db.from(table).update({status:row.status}).eq('id',row.id);if(error)throw error;}else await save(table,row);$('#editor').close();await load();notify(demo?'تم تعديل المعاينة المحلية':translationWarning?'تم الحفظ. تعذر تحديث الإنجليزية مؤقتًا وسيُعاد المحاولة عند التعديل القادم.':'تم الحفظ والترجمة تلقائيًا')}catch(err){$('#formError').textContent=err.message}finally{busy=false;saveButton.disabled=false;saveButton.textContent=oldSaveText}};
+$('#tabs').onclick=e=>{const b=e.target.closest('[data-table]');if(!b)return;table=b.dataset.table;if(table==='sm_products'){productCategory=b.dataset.productCategory||'games';productGroup='all';}$('#search').value='';load()};$('#productCategories').onclick=e=>{const b=e.target.closest('[data-product-group]');if(!b)return;productGroup=b.dataset.productGroup;render()};$('#new').onclick=()=>edit('');$('#close').onclick=()=>$('#editor').close();$('#refresh').onclick=load;$('#search').oninput=render;
 $('#records').onclick=async e=>{
  const editBtn=e.target.closest('[data-edit]');
  const deleteBtn=e.target.closest('[data-delete]');
