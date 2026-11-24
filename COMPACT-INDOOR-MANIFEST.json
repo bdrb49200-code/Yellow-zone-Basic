@@ -1,0 +1,827 @@
+[
+  {
+    "type": "maze",
+    "index": 1,
+    "file": "assets/compact-indoor-165/maze-001.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 2,
+    "file": "assets/compact-indoor-165/maze-002.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 3,
+    "file": "assets/compact-indoor-165/maze-003.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 4,
+    "file": "assets/compact-indoor-165/maze-004.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 5,
+    "file": "assets/compact-indoor-165/maze-005.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 6,
+    "file": "assets/compact-indoor-165/maze-006.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 7,
+    "file": "assets/compact-indoor-165/maze-007.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 8,
+    "file": "assets/compact-indoor-165/maze-008.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 9,
+    "file": "assets/compact-indoor-165/maze-009.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 10,
+    "file": "assets/compact-indoor-165/maze-010.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 11,
+    "file": "assets/compact-indoor-165/maze-011.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 12,
+    "file": "assets/compact-indoor-165/maze-012.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 13,
+    "file": "assets/compact-indoor-165/maze-013.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 14,
+    "file": "assets/compact-indoor-165/maze-014.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 15,
+    "file": "assets/compact-indoor-165/maze-015.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 16,
+    "file": "assets/compact-indoor-165/maze-016.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 17,
+    "file": "assets/compact-indoor-165/maze-017.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 18,
+    "file": "assets/compact-indoor-165/maze-018.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 19,
+    "file": "assets/compact-indoor-165/maze-019.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 20,
+    "file": "assets/compact-indoor-165/maze-020.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 21,
+    "file": "assets/compact-indoor-165/maze-021.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 22,
+    "file": "assets/compact-indoor-165/maze-022.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 23,
+    "file": "assets/compact-indoor-165/maze-023.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 24,
+    "file": "assets/compact-indoor-165/maze-024.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 25,
+    "file": "assets/compact-indoor-165/maze-025.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 26,
+    "file": "assets/compact-indoor-165/maze-026.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 27,
+    "file": "assets/compact-indoor-165/maze-027.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 28,
+    "file": "assets/compact-indoor-165/maze-028.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 29,
+    "file": "assets/compact-indoor-165/maze-029.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 30,
+    "file": "assets/compact-indoor-165/maze-030.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 31,
+    "file": "assets/compact-indoor-165/maze-031.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 32,
+    "file": "assets/compact-indoor-165/maze-032.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 33,
+    "file": "assets/compact-indoor-165/maze-033.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 34,
+    "file": "assets/compact-indoor-165/maze-034.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 35,
+    "file": "assets/compact-indoor-165/maze-035.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 36,
+    "file": "assets/compact-indoor-165/maze-036.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 37,
+    "file": "assets/compact-indoor-165/maze-037.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 38,
+    "file": "assets/compact-indoor-165/maze-038.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 39,
+    "file": "assets/compact-indoor-165/maze-039.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 40,
+    "file": "assets/compact-indoor-165/maze-040.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 41,
+    "file": "assets/compact-indoor-165/maze-041.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 42,
+    "file": "assets/compact-indoor-165/maze-042.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 43,
+    "file": "assets/compact-indoor-165/maze-043.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 44,
+    "file": "assets/compact-indoor-165/maze-044.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 45,
+    "file": "assets/compact-indoor-165/maze-045.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 46,
+    "file": "assets/compact-indoor-165/maze-046.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 47,
+    "file": "assets/compact-indoor-165/maze-047.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 48,
+    "file": "assets/compact-indoor-165/maze-048.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 49,
+    "file": "assets/compact-indoor-165/maze-049.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 50,
+    "file": "assets/compact-indoor-165/maze-050.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 51,
+    "file": "assets/compact-indoor-165/maze-051.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 52,
+    "file": "assets/compact-indoor-165/maze-052.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 53,
+    "file": "assets/compact-indoor-165/maze-053.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 54,
+    "file": "assets/compact-indoor-165/maze-054.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 55,
+    "file": "assets/compact-indoor-165/maze-055.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 56,
+    "file": "assets/compact-indoor-165/maze-056.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 57,
+    "file": "assets/compact-indoor-165/maze-057.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 58,
+    "file": "assets/compact-indoor-165/maze-058.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 59,
+    "file": "assets/compact-indoor-165/maze-059.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 60,
+    "file": "assets/compact-indoor-165/maze-060.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 61,
+    "file": "assets/compact-indoor-165/maze-061.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 62,
+    "file": "assets/compact-indoor-165/maze-062.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 63,
+    "file": "assets/compact-indoor-165/maze-063.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 64,
+    "file": "assets/compact-indoor-165/maze-064.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 65,
+    "file": "assets/compact-indoor-165/maze-065.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 66,
+    "file": "assets/compact-indoor-165/maze-066.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 67,
+    "file": "assets/compact-indoor-165/maze-067.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 68,
+    "file": "assets/compact-indoor-165/maze-068.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 69,
+    "file": "assets/compact-indoor-165/maze-069.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 70,
+    "file": "assets/compact-indoor-165/maze-070.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 71,
+    "file": "assets/compact-indoor-165/maze-071.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 72,
+    "file": "assets/compact-indoor-165/maze-072.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 73,
+    "file": "assets/compact-indoor-165/maze-073.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 74,
+    "file": "assets/compact-indoor-165/maze-074.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 75,
+    "file": "assets/compact-indoor-165/maze-075.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 76,
+    "file": "assets/compact-indoor-165/maze-076.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 77,
+    "file": "assets/compact-indoor-165/maze-077.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 78,
+    "file": "assets/compact-indoor-165/maze-078.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 79,
+    "file": "assets/compact-indoor-165/maze-079.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 80,
+    "file": "assets/compact-indoor-165/maze-080.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 81,
+    "file": "assets/compact-indoor-165/maze-081.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 82,
+    "file": "assets/compact-indoor-165/maze-082.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 83,
+    "file": "assets/compact-indoor-165/maze-083.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 84,
+    "file": "assets/compact-indoor-165/maze-084.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 85,
+    "file": "assets/compact-indoor-165/maze-085.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 86,
+    "file": "assets/compact-indoor-165/maze-086.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 87,
+    "file": "assets/compact-indoor-165/maze-087.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 88,
+    "file": "assets/compact-indoor-165/maze-088.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 89,
+    "file": "assets/compact-indoor-165/maze-089.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 90,
+    "file": "assets/compact-indoor-165/maze-090.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 91,
+    "file": "assets/compact-indoor-165/maze-091.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 92,
+    "file": "assets/compact-indoor-165/maze-092.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 93,
+    "file": "assets/compact-indoor-165/maze-093.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 94,
+    "file": "assets/compact-indoor-165/maze-094.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 95,
+    "file": "assets/compact-indoor-165/maze-095.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 96,
+    "file": "assets/compact-indoor-165/maze-096.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 97,
+    "file": "assets/compact-indoor-165/maze-097.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 98,
+    "file": "assets/compact-indoor-165/maze-098.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 99,
+    "file": "assets/compact-indoor-165/maze-099.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 100,
+    "file": "assets/compact-indoor-165/maze-100.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 101,
+    "file": "assets/compact-indoor-165/maze-101.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 102,
+    "file": "assets/compact-indoor-165/maze-102.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 103,
+    "file": "assets/compact-indoor-165/maze-103.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 104,
+    "file": "assets/compact-indoor-165/maze-104.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 105,
+    "file": "assets/compact-indoor-165/maze-105.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 106,
+    "file": "assets/compact-indoor-165/maze-106.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 107,
+    "file": "assets/compact-indoor-165/maze-107.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 108,
+    "file": "assets/compact-indoor-165/maze-108.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 109,
+    "file": "assets/compact-indoor-165/maze-109.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 110,
+    "file": "assets/compact-indoor-165/maze-110.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 111,
+    "file": "assets/compact-indoor-165/maze-111.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 112,
+    "file": "assets/compact-indoor-165/maze-112.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 113,
+    "file": "assets/compact-indoor-165/maze-113.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 114,
+    "file": "assets/compact-indoor-165/maze-114.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 115,
+    "file": "assets/compact-indoor-165/maze-115.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 116,
+    "file": "assets/compact-indoor-165/maze-116.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 117,
+    "file": "assets/compact-indoor-165/maze-117.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 118,
+    "file": "assets/compact-indoor-165/maze-118.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 119,
+    "file": "assets/compact-indoor-165/maze-119.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 120,
+    "file": "assets/compact-indoor-165/maze-120.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 121,
+    "file": "assets/compact-indoor-165/maze-121.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 122,
+    "file": "assets/compact-indoor-165/maze-122.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 123,
+    "file": "assets/compact-indoor-165/maze-123.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 124,
+    "file": "assets/compact-indoor-165/maze-124.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 125,
+    "file": "assets/compact-indoor-165/maze-125.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 126,
+    "file": "assets/compact-indoor-165/maze-126.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 127,
+    "file": "assets/compact-indoor-165/maze-127.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 128,
+    "file": "assets/compact-indoor-165/maze-128.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 129,
+    "file": "assets/compact-indoor-165/maze-129.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 130,
+    "file": "assets/compact-indoor-165/maze-130.jpg"
+  },
+  {
+    "type": "maze",
+    "index": 131,
+    "file": "assets/compact-indoor-165/maze-131.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 1,
+    "file": "assets/compact-indoor-165/trampoline-001.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 2,
+    "file": "assets/compact-indoor-165/trampoline-002.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 3,
+    "file": "assets/compact-indoor-165/trampoline-003.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 4,
+    "file": "assets/compact-indoor-165/trampoline-004.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 5,
+    "file": "assets/compact-indoor-165/trampoline-005.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 6,
+    "file": "assets/compact-indoor-165/trampoline-006.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 7,
+    "file": "assets/compact-indoor-165/trampoline-007.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 8,
+    "file": "assets/compact-indoor-165/trampoline-008.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 9,
+    "file": "assets/compact-indoor-165/trampoline-009.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 10,
+    "file": "assets/compact-indoor-165/trampoline-010.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 11,
+    "file": "assets/compact-indoor-165/trampoline-011.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 12,
+    "file": "assets/compact-indoor-165/trampoline-012.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 13,
+    "file": "assets/compact-indoor-165/trampoline-013.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 14,
+    "file": "assets/compact-indoor-165/trampoline-014.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 15,
+    "file": "assets/compact-indoor-165/trampoline-015.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 16,
+    "file": "assets/compact-indoor-165/trampoline-016.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 17,
+    "file": "assets/compact-indoor-165/trampoline-017.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 18,
+    "file": "assets/compact-indoor-165/trampoline-018.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 19,
+    "file": "assets/compact-indoor-165/trampoline-019.jpg"
+  },
+  {
+    "type": "trampoline",
+    "index": 20,
+    "file": "assets/compact-indoor-165/trampoline-020.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 1,
+    "file": "assets/compact-indoor-165/balls-001.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 2,
+    "file": "assets/compact-indoor-165/balls-002.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 3,
+    "file": "assets/compact-indoor-165/balls-003.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 4,
+    "file": "assets/compact-indoor-165/balls-004.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 5,
+    "file": "assets/compact-indoor-165/balls-005.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 6,
+    "file": "assets/compact-indoor-165/balls-006.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 7,
+    "file": "assets/compact-indoor-165/balls-007.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 8,
+    "file": "assets/compact-indoor-165/balls-008.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 9,
+    "file": "assets/compact-indoor-165/balls-009.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 10,
+    "file": "assets/compact-indoor-165/balls-010.jpg"
+  },
+  {
+    "type": "balls",
+    "index": 11,
+    "file": "assets/compact-indoor-165/balls-011.jpg"
+  },
+  {
+    "type": "slides",
+    "index": 1,
+    "file": "assets/compact-indoor-165/slides-001.jpg"
+  },
+  {
+    "type": "slides",
+    "index": 2,
+    "file": "assets/compact-indoor-165/slides-002.jpg"
+  },
+  {
+    "type": "slides",
+    "index": 3,
+    "file": "assets/compact-indoor-165/slides-003.jpg"
+  }
+]

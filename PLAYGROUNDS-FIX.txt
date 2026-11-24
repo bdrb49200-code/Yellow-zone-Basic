@@ -1,0 +1,2 @@
+This admin package now includes assets/playgrounds-300 with all 300 images.
+The database importer is idempotent and preserves existing products.

@@ -54,3 +54,27 @@ details.orderCard{padding:0;overflow:hidden;display:block}details.orderCard>summ
 .productCategories .mainCategoryBtn.active{background:#7a267f;color:#fff;border-color:#7a267f}
 .productCategories .addGroupBtn{border:1px dashed #7a267f;background:#fff;color:#7a267f;font-weight:800}
 @media(max-width:700px){.categoryLevel{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}.categoryLevel button{flex:0 0 auto}.productCategories{padding:12px 8px}}
+
+/* 2026-11 admin usability */
+#records article{position:relative}.adminProductNo{position:absolute;top:8px;inset-inline-start:8px;background:#25212a;color:#fff;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:800;z-index:3}.imagePickTile{cursor:pointer;border:2px dashed #b99bc0!important;border-radius:16px!important;min-height:150px;display:flex!important;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:#faf6fb}.imagePickTile input{position:absolute;opacity:0;pointer-events:none}.imagePickIcon{font-size:46px}.imagePickMouse{font-size:24px}.imagePickTile strong{color:#6f2578;font-size:16px}@media(max-width:650px){#records{grid-template-columns:1fr!important}#records article{min-height:105px}.imagePickTile{min-height:125px}}
+
+
+/* Preserve-media editor */
+.currentImageBox{display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px;border:1px solid #eadfed;border-radius:14px;background:#fff}
+.currentImageBox .currentImageTitle{font-weight:800;color:#5b2563}
+.currentImageBox img{width:min(100%,320px);max-height:220px;object-fit:contain;border-radius:12px;background:#f1f1f1}
+.currentImageBox .removeImageBtn{width:min(100%,220px);padding:11px 14px}
+.currentImageBox small{color:#706873;text-align:center}
+
+/* Dimensions + gallery controls */
+.adminGalleryPreview{padding:14px;border:1px solid #eadfed;border-radius:14px;background:#fff}.adminGalleryPreview>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}.adminGalleryPreview figure{margin:0;padding:8px;border:1px solid #eee5f0;border-radius:12px;background:#fafafa;display:flex;flex-direction:column;gap:7px}.adminGalleryPreview img{width:100%;height:110px;object-fit:contain;border-radius:8px;background:white}.adminGalleryPreview button{font-size:12px;padding:8px}
+#records article{min-height:250px;align-content:start}#records article>img{height:150px;object-fit:contain;background:#fafafa}
+@media(max-width:650px){.adminGalleryPreview>div{grid-template-columns:repeat(2,minmax(0,1fr))}.adminGalleryPreview img{height:90px}}
+
+.dimensionInputWrap{display:flex;align-items:stretch;gap:8px}.dimensionInputWrap input{flex:1;min-width:0}.dimensionXBtn{flex:0 0 48px;border:0;border-radius:10px;background:#7b1f7f;color:#fff;font-size:26px;font-weight:800;line-height:1;cursor:pointer}.dimensionXBtn:active{transform:scale(.94)}
+
+/* 300 playground catalog: admin row filters */
+.playgroundRowLevel{border-top:1px solid #e9d9ea;padding-top:12px;margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.playgroundRowLevel button{border:1px solid #d9c8dd;background:#fff;color:#63246d;border-radius:20px;padding:9px 14px;cursor:pointer}
+.playgroundRowLevel button.active{background:#752581;color:#fff;border-color:#752581}
+.playgroundRowLevel small{margin-inline-start:7px;opacity:.7}
